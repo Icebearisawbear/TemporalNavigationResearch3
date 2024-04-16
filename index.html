@@ -3,16 +3,17 @@
 
 <head>
 <title>Challenges and considerations part 1</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+<body id="container" style="color: #bb00ff; font-family: 'roboto' , sans-serif; background-color: black;">
 
-  <p>
-    <h1 style="color: blue; font-family: 'Roboto' , sans-serif;">
+  <p style="color: blue;">
+    <h1>
       Challenges And Considerations Part One
 </h1>
   </p>
-  <h4 style="font-family: 'Roboto' , sans-serif;">
+  <h4>
     <hr>
   <p>
     Ethical Concerns: Manipulating consciousness and potentially altering the course of future events raise significant ethical dilemmas that must be carefully addressed.
@@ -44,21 +45,34 @@
   <p>
   Temporal Energy Requirement: The constant (β) represents the energy required for temporal navigation. Navigating through time likely demands significant energy resources, and (β) quantifies this requirement relative to the mass of the object or system.
   </p>
-  <a href="https://icebearisawbear.github.io/TemporalNavigationResearch4/">
-    <button>
-      click to go to next page
-    </button>
-  </a>
-  <a href="https://icebearisawbear.github.io/TemporalNavigationResearch2/">
-    <button>
-      click to go to previous page
-    </button>
-  </a>
-  <a href="https://icebearisawbear.github.io/TemporalNavigationResearch/">
-    <button>
+    <a href="https://icebearisawbear.github.io/TemporalNavigationResearch4/" class="button">
+      click to go to the next page
+    </a>
+     <a href="https://icebearisawbear.github.io/TemporalNavigationResearch2/" class="button">
+       click to go to the previous page
+     </a>
+    <a href="https://icebearisawbear.github.io/TemporalNavigationResearch/" class="button">
       click to go back to the start
-    </button>
-  </a>
+    </a>
+
+    <script>
+        (function() {
+            document.addEventListener("mousemove", parallax);
+            const elem = document.querySelector("#container");
+
+            function parallax(e) {
+                let _w = window.innerWidth/2;
+                let _h = window.innerHeight/2;
+                let _mouseX = e.clientX;
+                let _mouseY = e.clientY;
+                let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+                let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+                let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+                let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+                elem.style.backgroundPosition = x;
+            }
+        })();
+    </script>
 </body>
 
 </html>
